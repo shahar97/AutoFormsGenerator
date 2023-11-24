@@ -55,13 +55,13 @@ def split_full_name(data: pd.DataFrame) -> pd.DataFrame:
 
 
 # Drop column which are not use.
-def drop_invalid_columns(data, columns_to_drop: List[str]):
+def drop_invalid_columns(data: pd.DataFrame, columns_to_drop: List[str])-> pd.DataFrame:
     data = data.drop(columns_to_drop, axis=1)
     return data
 
 
 # Translate the column name from hebrew to english.
-def column_into_english(data):
+def column_into_english(data:pd.DataFrame)->  pd.DataFrame:
     data.columns = list(map(lambda x: columns_mapping.get(x, ' '), data.columns))
     return data
 
